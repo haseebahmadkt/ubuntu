@@ -12,6 +12,7 @@ chrome_options.add_experimental_option("prefs", prefs)
 chrome_options.add_argument("--disable-extensions")
 chrome_options.add_argument('--no-sandbox')
 chrome_options.add_argument('--disable-dev-shm-usage')
+chrome_options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36')
 from bs4 import BeautifulSoup
 import pandas as pd
 import requests
@@ -19,7 +20,7 @@ import time
 
 def start():
   global driver
-  chrome_options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/68.0.3440.84 Safari/537.36')
+  global chrome_options
   driver = webdriver.Chrome('chromedriver',chrome_options=chrome_options)
   driver.implicitly_wait(30)
 
