@@ -1,0 +1,31 @@
+apt update && apt upgrade && sudo apt install xserver-xorg-core && sudo apt install tigervnc-standalone-server tigervnc-xorg-extension tigervnc-viewer && sudo apt install ubuntu-gnome-desktop && sudo systemctl start gdm && sudo systemctl enable gdm
+vncserver
+vncserver -kill :*
+nano ~/.vnc/xstartup
+
+#!/bin/sh 
+[ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
+[ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
+vncconfig -iconic &
+dbus-launch --exit-with-session gnome-session &
+
+vncserver -localhost no -geometry 1360x768 -depth 24
+
+After Log in
+Cursor Size
+Terminal Shortcut
+ADD User
+ADD GNOME TWEAKS
+ADD PYTHON
+apt install python3.8
+apt install python-pip
+
+
+Login
+loginctl unlock-sessions
+
+python update commands
+
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7.17 2
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
+sudo update-alternatives --set python /usr/bin/python3.8
