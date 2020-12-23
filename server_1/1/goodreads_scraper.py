@@ -218,9 +218,7 @@ def scrape():
     except urllib.error.HTTPError as ex:
       continue
     except Exception as e:
-      msg = "UBUNTU Server 1 Instance 1 Stopped at "+str(b_id)+" \n\n Error Message:"+str(e)
       print('Script Stopped at',b_id)
-      send_mail(msg)
       driver.quit()
       print('Sleep')
       time.sleep(20)
@@ -232,8 +230,6 @@ def scrape():
   print("Generating Excel")
   fn = str(s)+"_"+str(ep)+"_results.xlsx"
   df.to_excel(fn,index=False)
-  msg = "UBUNTU Server 1 Instance 1 Completed at "+str(b_id)+" \n\n Sucess"
-  send_mail(msg)
   print("Closed")
 
 start()
