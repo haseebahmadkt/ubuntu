@@ -29,3 +29,6 @@ python update commands
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7.17 2
 sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.8 1
 sudo update-alternatives --set python /usr/bin/python3.8
+
+
+echo 1 > /proc/sys/vm/overcommit_memory
