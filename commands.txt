@@ -32,3 +32,16 @@ sudo update-alternatives --set python /usr/bin/python3.8
 
 
 echo 1 > /proc/sys/vm/overcommit_memory
+
+
+
+import numpy as np
+  print("Generating Excel")
+  df_range = range(len(df))
+  df_sizes = np.split(np.array(df_range),6)
+  for df_sz in df_sizes:
+    df_st = df_sz[0]
+    df_ed = df_sz[-1]
+    df2 = df[df_st:df_ed]
+    fn = str(s)+"_"+str(ep)+'_'+str(df_st)+"_"+str(df_ed)+"_results.xlsx"
+    df2.to_excel(fn,index=False)
